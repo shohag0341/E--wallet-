@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>Agent Wallet — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <div class="topbar">
+    <h1>E-Wallet</h1>
+    <div style="display:flex; gap:10px;">
+      <a href="account.html" class="icon-btn">👤</a>
+    </div>
+  </div>
+
+  <div class="balance-card">
+    <div class="label">Total Balance</div>
+    <div class="amount" id="balanceAmount">৳0.00</div>
+  </div>
+
+  <div class="quick-actions">
+    <a href="deposit.html">
+      <div class="qa-icon" style="background:#f59e0b;">➕</div>
+      Deposit
+    </a>
+    <a href="withdraw.html">
+      <div class="qa-icon" style="background:#ef4444;">➖</div>
+      Withdraw
+    </a>
+    <a href="history.html?type=deposit">
+      <div class="qa-icon" style="background:#6C5CE7;">🕒</div>
+      Deposits
+    </a>
+    <a href="history.html?type=withdraw">
+      <div class="qa-icon" style="background:#22c55e;">🕒</div>
+      Withdraws
+    </a>
+  </div>
+
+  <div class="card">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <strong>Recent Transactions</strong>
+      <a href="history.html" style="color:var(--primary); font-size:13px; text-decoration:none; font-weight:600;">View All</a>
+    </div>
+    <div id="recentTxList">
+      <div class="empty-state">লোড হচ্ছে...</div>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="dashboard.html" class="active">🏠<span>Home</span></a>
+    <a href="deposit.html">➕<span>Deposit</span></a>
+    <a href="withdraw.html">➖<span>Withdraw</span></a>
+    <a href="account.html">👤<span>Account</span></a>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
+
