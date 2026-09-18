@@ -72,4 +72,3 @@ function renderTxRow(tx) {
   }
   listEl.innerHTML = txs.map(renderTxRow).join("");
 })();
-
