@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>Agent Wallet — Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <h1>Agent Wallet</h1>
+      <p>Fast • Secure • Reliable (Demo)</p>
+    </div>
+
+    <div class="tab-switch">
+      <button id="tabLogin" class="active" onclick="switchTab('login')">Login</button>
+      <button id="tabRegister" onclick="switchTab('register')">Register</button>
+    </div>
+
+    <div id="alertBox" class="alert"></div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm">
+      <div class="form-group">
+        <input type="email" id="loginEmail" placeholder="Email" required autocomplete="email" />
+      </div>
+      <div class="form-group password-field">
+        <input type="password" id="loginPassword" placeholder="Password" required autocomplete="current-password" />
+        <button type="button" class="toggle-eye" onclick="togglePw('loginPassword', this)">👁</button>
+      </div>
+      <button type="submit" class="btn-primary" id="loginBtn">Login</button>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="registerForm" style="display:none;">
+      <div class="form-group">
+        <input type="text" id="regFullName" placeholder="Full Name" required />
+      </div>
+      <div class="form-group">
+        <input type="text" id="regUsername" placeholder="Username" required minlength="3" />
+      </div>
+      <div class="form-group">
+        <input type="tel" id="regPhone" placeholder="Phone Number" required />
+      </div>
+      <div class="form-group">
+        <input type="email" id="regEmail" placeholder="Email" required autocomplete="email" />
+      </div>
+      <div class="form-group password-field">
+        <input type="password" id="regPassword" placeholder="Password (min 8 characters)" required minlength="8" autocomplete="new-password" />
+        <button type="button" class="toggle-eye" onclick="togglePw('regPassword', this)">👁</button>
+      </div>
+      <div class="form-group password-field">
+        <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required minlength="8" autocomplete="new-password" />
+        <button type="button" class="toggle-eye" onclick="togglePw('regConfirmPassword', this)">👁</button>
+      </div>
+      <button type="submit" class="btn-primary" id="registerBtn">Create Account</button>
+    </form>
+
+    <p class="form-hint" id="switchHint">
+      Don't have an account? <a href="#" onclick="switchTab('register'); return false;">Register</a>
+    </p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
